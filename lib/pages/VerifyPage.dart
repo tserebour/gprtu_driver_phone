@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
 import '../custom_widgets/CustomButton.dart';
+import '../custom_widgets/custom_scaffold.dart';
 import '../custom_widgets/custom_verification_input.dart';
 import 'LoginPage.dart';
 
@@ -17,7 +18,7 @@ class _VerifyPageState extends State<VerifyPage> {
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
-    return Scaffold(
+    return CustomScaffold(
       body: Center(
         child: SingleChildScrollView(
           child: Padding(

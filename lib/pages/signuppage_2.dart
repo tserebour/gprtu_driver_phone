@@ -3,6 +3,7 @@ import 'package:gap/gap.dart';
 
 import '../custom_widgets/CustomButton.dart';
 import '../custom_widgets/custom_input.dart';
+import '../custom_widgets/custom_scaffold.dart';
 import 'LoginPage.dart';
 import 'VerifyPage.dart';
 class SignUpPage2 extends StatefulWidget {
@@ -17,7 +18,7 @@ class _SignUpPage2State extends State<SignUpPage2> {
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
-    return Scaffold(
+    return CustomScaffold(
       body: Padding(
         padding: EdgeInsets.only(top:height*0.08,left: width*0.1, bottom: height*0.03),
         child: SingleChildScrollView(
