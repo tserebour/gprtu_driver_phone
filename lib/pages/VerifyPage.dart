@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:gprtu_driver_phone/pages/signuppage_2.dart';
 
 import '../custom_widgets/CustomButton.dart';
 import '../custom_widgets/custom_scaffold.dart';
@@ -48,6 +49,7 @@ class _VerifyPageState extends State<VerifyPage> {
                 const Row(
 
                   children: [
+
                     CustomVerificationInput(),
                     CustomVerificationInput(),
                     CustomVerificationInput(),
@@ -70,7 +72,7 @@ class _VerifyPageState extends State<VerifyPage> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const LoginPage(),
+                          builder: (context) => const SignUpPage2(),
                         ),
                       );
 
