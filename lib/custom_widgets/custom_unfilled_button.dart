@@ -23,15 +23,18 @@ class _CustomUnfilledButtonState extends State<CustomUnfilledButton> {
         child: ElevatedButton(
 
           style: ElevatedButton.styleFrom(
+            elevation: 2,
             // foregroundColor: Colors.white, backgroundColor: Theme.of(context).primaryColor,
             shape: RoundedRectangleBorder(
+              side: BorderSide(color: Theme.of(context).primaryColor),
               borderRadius: BorderRadius.circular(10),
+
             ),
           ),
           onPressed: widget.onPressed,
           child: Text(
             widget.content,
-            style: const TextStyle(color: Colors.white),
+            style: TextStyle(color: Theme.of(context).primaryColor),
           ),
         ),
       )
