@@ -5,6 +5,7 @@ import '../custom_widgets/CustomButton.dart';
 import '../custom_widgets/custom_input.dart';
 import '../custom_widgets/custom_scaffold.dart';
 import 'SignUpPage.dart';
+import 'homepage.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -83,12 +84,12 @@ class _LoginPageState extends State<LoginPage> {
             CustomButton(
               content: "Sign In",
               onPressed: () {
-                // Navigator.push(
-                //   context,
-                //   MaterialPageRoute(
-                //     builder: (context) => HomePage(),
-                //   ),
-                // );
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const HomePage(),
+                  ),
+                );
               },
             ),
 

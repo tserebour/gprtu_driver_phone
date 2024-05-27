@@ -67,6 +67,10 @@ class _CustomInputState extends State<CustomInput> {
                       null
                     ),
                   hintText: widget.hintText,
+                  hintStyle: TextStyle(
+                    fontSize: width * 0.03,
+                    color: Colors.grey
+                  ),
                   //blue borders
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),

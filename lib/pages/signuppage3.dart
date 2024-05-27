@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:gap/gap.dart';
-import 'package:gprtu_driver_phone/pages/signuppage3.dart';
+import 'package:gprtu_driver_phone/pages/signuppage4.dart';
 
 import '../custom_widgets/CustomButton.dart';
 import '../custom_widgets/custom_input.dart';
 import '../custom_widgets/custom_scaffold.dart';
+
 import '../custom_widgets/custom_unfilled_button.dart';
 import 'LoginPage.dart';
-
-class SignUpPage2 extends StatefulWidget {
-  const SignUpPage2({super.key});
+import 'package:gap/gap.dart';
+class SignUpPage3 extends StatefulWidget {
+  const SignUpPage3({super.key});
 
   @override
-  State<SignUpPage2> createState() => _SignUpPage2State();
+  State<SignUpPage3> createState() => _SignUpPage3State();
 }
 
-class _SignUpPage2State extends State<SignUpPage2> {
+class _SignUpPage3State extends State<SignUpPage3> {
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
@@ -38,31 +38,17 @@ class _SignUpPage2State extends State<SignUpPage2> {
               ),
 
 
-              Center(
-                child: Image.asset(
-                  "assets/images/default_profile.png",
-
-                  height: height*0.15,
-                ),
+              Gap(
+                height *0.15
               ),
 
-              CustomInput(hintText: "Enter Firstname here", label: "Firstname"),
-              CustomInput(hintText: "Enter Lastname here", label: "Lastname"),
-              CustomInput(hintText: "Enter Location here", label: "Location"),
-              Row(
-                children: [
-                  Expanded(child: CustomInput(hintText: "Enter Ghana Card number here", label: "Ghana Card")),
-                  Gap(
-                    width*0.05
-                  ),
-                  Expanded(child: CustomInput(hintText: "Enter License number here", label: "License")),
+              CustomInput(hintText: "Enter Vehicle Model here", label: "Vehicle Model"),
+              CustomInput(hintText: "Enter Registration Number", label: "Registration Number"),
+              CustomInput(hintText: "Enter Union Name here", label: "Union Name"),
 
-                ],
 
-              ),
-
-              CustomInput(hintText: "Enter License class here", label: "License class"),
-              CustomInput(hintText: "Enter Address here", label: "Address"),
+              CustomInput(hintText: "Enter Union ID here", label: "Union ID"),
+              CustomInput(hintText: "Enter Station ID here", label: "Station ID"),
 
 
 
@@ -76,7 +62,7 @@ class _SignUpPage2State extends State<SignUpPage2> {
                 children: [
                   Expanded(
                     child: CustomUnfilledButton(
-                      
+
                       content: "Skip",
                       onPressed: () {
                         Navigator.push(
@@ -93,13 +79,13 @@ class _SignUpPage2State extends State<SignUpPage2> {
 
                   Expanded(
                     child: CustomButton(
-                      
-                      content: "Next",
+
+                      content: "Save",
                       onPressed: () {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => const SignUpPage3(),
+                            builder: (context) => const SignUpPage4(),
                           ),
                         );
                       },
