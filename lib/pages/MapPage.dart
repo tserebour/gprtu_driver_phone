@@ -1,5 +1,6 @@
-
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:gprtu_driver_phone/custom_widgets/BottomNavBar.dart';
 
 import '../custom_widgets/DisplayMap.dart';
@@ -75,16 +76,12 @@ class _MapPageState extends State<MapPage> {
               // setState(() {});
             },
           ),
-          Positioned(
-            bottom: 0,
 
-              child: BottomNavBar(
-            currentIndex: 0,
-          )
-          )
         ],
       ),
-
+      bottomNavigationBar: BottomNavBar(
+        currentIndex: 1,
+      ),
     );
   }
 }

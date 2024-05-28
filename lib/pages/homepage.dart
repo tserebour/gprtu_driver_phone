@@ -68,154 +68,143 @@ class _HomePageState extends State<HomePage> {
           ),
         ],
       ),
-      body: Stack(
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Container(
-                width: width,
-                height: height*0.3,
-                decoration: const BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage('assets/images/uberwhite.jpg'),
-                    fit: BoxFit.cover,
-                  )
-                ),
-              ),
-
-
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Column(
-                  children: [
-                    Text(
-                      "Details",
-                      style: TextStyle(
-                        fontSize: width * 0.05,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-
-                    Row(
-                      children: [
-                        Expanded(
-                          child: Card(
-                            elevation: 2,
-                            child: Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Column(
-                                children: [
-                                  CircleAvatar(
-                                    radius: width * 0.04,
-                                    backgroundColor: Colors.transparent,
-                                    child: Icon(Icons.location_on, color: Theme.of(context).primaryColor,),
-                                  ),
-
-                                  Text(
-                                    "current Location",
-                                    style: TextStyle(
-                                      fontSize: width * 0.03,
-                                      color: Colors.grey,
-                                      )
-                                  ),
-
-                                  Text(
-                                      "Ejisu",
-                                      style: TextStyle(
-                                        fontSize: width * 0.05,
-                                      )
-                                  )
-                                ],
-                              ),
-                            ),
-                          ),
-                        ),
-                        Expanded(
-                          child: Card(
-                            elevation: 2,
-                            child: Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Column(
-                                children: [
-                                  CircleAvatar(
-                                    radius: width * 0.04,
-                                    backgroundColor: Colors.transparent,
-                                    child: Icon(Icons.location_on, color: Theme.of(context).primaryColor,),
-                                  ),
-
-                                  Text(
-                                    "current Queue",
-                                    style: TextStyle(
-                                      fontSize: width * 0.03,
-                                      color: Colors.grey,
-                                      )
-                                  ),
-
-                                  Text(
-                                      "1st",
-                                      style: TextStyle(
-                                        fontSize: width * 0.05,
-                                      )
-                                  )
-                                ],
-                              ),
-                            ),
-                          ),
-                        ),
-                        Expanded(
-                          child: Card(
-                            elevation: 2,
-                            child: Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Column(
-                                children: [
-                                  CircleAvatar(
-                                    radius: width * 0.04,
-                                    backgroundColor: Colors.transparent,
-                                    child: Icon(Icons.location_on, color: Theme.of(context).primaryColor,),
-                                  ),
-
-                                  Text(
-                                    "Distance",
-                                    style: TextStyle(
-                                      fontSize: width * 0.03,
-                                      color: Colors.grey,
-                                      )
-                                  ),
-
-                                  Text(
-                                      "40Km",
-                                      style: TextStyle(
-                                        fontSize: width * 0.05,
-                                      )
-                                  )
-                                ],
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    )
-                  ],
-                ),
+          Container(
+            width: width,
+            height: height*0.3,
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage('assets/images/uberwhite.jpg'),
+                fit: BoxFit.cover,
               )
-
-
-            ],
+            ),
           ),
 
-          Positioned(
-              bottom: 0,
 
-              child: BottomNavBar(
-                currentIndex: 0,
-              )
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              children: [
+                Text(
+                  "Details",
+                  style: TextStyle(
+                    fontSize: width * 0.05,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+
+                Row(
+                  children: [
+                    Expanded(
+                      child: Card(
+                        elevation: 2,
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Column(
+                            children: [
+                              CircleAvatar(
+                                radius: width * 0.04,
+                                backgroundColor: Colors.transparent,
+                                child: Icon(Icons.location_on, color: Theme.of(context).primaryColor,),
+                              ),
+
+                              Text(
+                                "current Location",
+                                style: TextStyle(
+                                  fontSize: width * 0.03,
+                                  color: Colors.grey,
+                                  )
+                              ),
+
+                              Text(
+                                  "Ejisu",
+                                  style: TextStyle(
+                                    fontSize: width * 0.05,
+                                  )
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: Card(
+                        elevation: 2,
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Column(
+                            children: [
+                              CircleAvatar(
+                                radius: width * 0.04,
+                                backgroundColor: Colors.transparent,
+                                child: Icon(Icons.location_on, color: Theme.of(context).primaryColor,),
+                              ),
+
+                              Text(
+                                "current Queue",
+                                style: TextStyle(
+                                  fontSize: width * 0.03,
+                                  color: Colors.grey,
+                                  )
+                              ),
+
+                              Text(
+                                  "1st",
+                                  style: TextStyle(
+                                    fontSize: width * 0.05,
+                                  )
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: Card(
+                        elevation: 2,
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Column(
+                            children: [
+                              CircleAvatar(
+                                radius: width * 0.04,
+                                backgroundColor: Colors.transparent,
+                                child: Icon(Icons.location_on, color: Theme.of(context).primaryColor,),
+                              ),
+
+                              Text(
+                                "Distance",
+                                style: TextStyle(
+                                  fontSize: width * 0.03,
+                                  color: Colors.grey,
+                                  )
+                              ),
+
+                              Text(
+                                  "40Km",
+                                  style: TextStyle(
+                                    fontSize: width * 0.05,
+                                  )
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                )
+              ],
+            ),
           )
+
+
         ],
       ),
 
 
+      bottomNavigationBar: BottomNavBar(currentIndex: 0,),
 
 
     );

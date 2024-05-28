@@ -20,7 +20,6 @@ class _BottomNavBarState extends State<BottomNavBar> {
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
-
     return SalomonBottomBar(
       backgroundColor: Colors.transparent,
       currentIndex: widget.currentIndex,
