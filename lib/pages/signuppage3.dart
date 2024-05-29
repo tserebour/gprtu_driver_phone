@@ -6,8 +6,13 @@ import '../custom_widgets/custom_input.dart';
 import '../custom_widgets/custom_scaffold.dart';
 
 import '../custom_widgets/custom_unfilled_button.dart';
+import '../models/user.dart';
+import '../providers/UserState.dart';
 import 'LoginPage.dart';
 import 'package:gap/gap.dart';
+import 'package:provider/provider.dart';
+
+
 class SignUpPage3 extends StatefulWidget {
   const SignUpPage3({super.key});
 
@@ -16,6 +21,13 @@ class SignUpPage3 extends StatefulWidget {
 }
 
 class _SignUpPage3State extends State<SignUpPage3> {
+
+  String vehicleMode = "";
+  String registrationNumber = "";
+  String unionName = "";
+  String unionID = "";
+  String stationID = "";
+
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
@@ -42,13 +54,23 @@ class _SignUpPage3State extends State<SignUpPage3> {
                 height *0.15
               ),
 
-              CustomInput(hintText: "Enter Vehicle Model here", label: "Vehicle Model"),
-              CustomInput(hintText: "Enter Registration Number", label: "Registration Number"),
-              CustomInput(hintText: "Enter Union Name here", label: "Union Name"),
+              CustomInput(hintText: "Enter Vehicle Model here", label: "Vehicle Model", onChanged: (String value) {
+                vehicleMode = value;
+              },),
+              CustomInput(hintText: "Enter Registration Number", label: "Registration Number", onChanged: (String value) {
+                registrationNumber = value;
+              },),
+              CustomInput(hintText: "Enter Union Name here", label: "Union Name", onChanged: (String value) {
+                unionName = value;
+              },),
 
 
-              CustomInput(hintText: "Enter Union ID here", label: "Union ID"),
-              CustomInput(hintText: "Enter Station ID here", label: "Station ID"),
+              CustomInput(hintText: "Enter Union ID here", label: "Union ID", onChanged: (String value) {
+                unionID = value;
+              },),
+              CustomInput(hintText: "Enter Station ID here", label: "Station ID", onChanged: (String value) {
+                stationID = value;
+              },),
 
 
 
@@ -82,6 +104,17 @@ class _SignUpPage3State extends State<SignUpPage3> {
 
                       content: "Save",
                       onPressed: () {
+
+                        User user  = Provider.of<UserState>(context, listen: false).user;
+
+                        user.vehicleModel = vehicleMode;
+                        user.registrationNumber = registrationNumber;
+                        user.unionName = unionName;
+                        user.unionId = unionID;
+                        user.stationId = stationID;
+
+
+                        context.read<UserState>().setUser(user: user);
                         Navigator.push(
                           context,
                           MaterialPageRoute(

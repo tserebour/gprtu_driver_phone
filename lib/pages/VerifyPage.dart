@@ -5,7 +5,10 @@ import 'package:gprtu_driver_phone/pages/signuppage_2.dart';
 import '../custom_widgets/CustomButton.dart';
 import '../custom_widgets/custom_scaffold.dart';
 import '../custom_widgets/custom_verification_input.dart';
+import '../models/user.dart';
+import '../providers/UserState.dart';
 import 'LoginPage.dart';
+import 'package:provider/provider.dart';
 
 class VerifyPage extends StatefulWidget {
   const VerifyPage({super.key});
@@ -17,6 +20,8 @@ class VerifyPage extends StatefulWidget {
 class _VerifyPageState extends State<VerifyPage> {
   @override
   Widget build(BuildContext context) {
+
+
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
     return CustomScaffold(

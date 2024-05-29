@@ -5,7 +5,10 @@ import '../custom_widgets/CustomButton.dart';
 import '../custom_widgets/custom_input.dart';
 import '../custom_widgets/custom_scaffold.dart';
 import '../custom_widgets/custom_unfilled_button.dart';
+import '../models/user.dart';
+import '../providers/UserState.dart';
 import 'LoginPage.dart';
+import 'package:provider/provider.dart';
 
 class SignUpPage4 extends StatefulWidget {
   const SignUpPage4({super.key});
@@ -15,6 +18,13 @@ class SignUpPage4 extends StatefulWidget {
 }
 
 class _SignUpPage4State extends State<SignUpPage4> {
+
+  String bankName = "";
+  String account = "";
+  String accountNumber = "";
+  String pin = "";
+  String confirmPin = "";
+
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
@@ -46,11 +56,21 @@ class _SignUpPage4State extends State<SignUpPage4> {
 
               ),
 
-              CustomInput(hintText: "Enter Bank Name here", label: "Bank"),
-              CustomInput(hintText: "Enter Account", label: "Account "),
-              CustomInput(hintText: "Enter Account Number", label: "Account Number"),
-              CustomInput(hintText: "Enter Pin here", label: "Pin"),
-              CustomInput(hintText: "Enter Confirmation Pin here", label: "Confirm Pin"),
+              CustomInput(hintText: "Enter Bank Name here", label: "Bank", onChanged: (String value) {
+                bankName = value;
+              },),
+              CustomInput(hintText: "Enter Account", label: "Account ", onChanged: (String value) {
+                account = value;
+              },),
+              CustomInput(hintText: "Enter Account Number", label: "Account Number", onChanged: (String value) {
+                accountNumber = value;
+              },),
+              CustomInput(hintText: "Enter Pin here", label: "Pin", onChanged: (String value) {
+                pin = value;
+              },),
+              CustomInput(hintText: "Enter Confirmation Pin here", label: "Confirm Pin", onChanged: (String value) {
+                confirmPin = value;
+              },),
 
 
 
@@ -86,13 +106,31 @@ class _SignUpPage4State extends State<SignUpPage4> {
                     child: CustomButton(
 
                       content: "Save",
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const LoginPage(),
-                          ),
-                        );
+                      onPressed: () async{
+
+                        User user  = Provider.of<UserState>(context, listen: false).user;
+
+
+
+                        user.bankName = bankName;
+                        user.accountName = account;
+                        user.accountNumber = accountNumber;
+                        user.pin = pin;
+
+
+                        context.read<UserState>().setUser(user: user);
+
+                        await user.signUp();
+
+
+                        if(context.mounted){
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const LoginPage(),
+                            ),
+                          );
+                        }
                       },
                     ),
                   )
