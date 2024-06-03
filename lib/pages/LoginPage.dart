@@ -116,11 +116,19 @@ class _LoginPageState extends State<LoginPage> {
 
                     print(phone);
 
-                    String userResult = await User(
-                        phone: phone,
-                        password: password,
+                    // String userResult = await User(
+                    //     phone: phone,
+                    //     password: password,
+                    //
+                    // ).signIn();
 
-                    ).signIn();
+                    String userResult = "";
+
+
+                    if(context.mounted){
+                      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const HomePage()));
+
+                    }
 
 
                     if(userResult == "Request failed with status: 500."){
