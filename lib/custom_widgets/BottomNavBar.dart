@@ -3,6 +3,7 @@ import 'package:gprtu_driver_phone/pages/homepage.dart';
 import "package:salomon_bottom_bar/salomon_bottom_bar.dart";
 
 import '../pages/MapPage.dart';
+import '../pages/SettingsPage.dart';
 
 
 
@@ -59,7 +60,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
             if (widget.currentIndex != 2) {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const MapPage()),
+                MaterialPageRoute(builder: (context) => const SettingsPage()),
               );
             }
           },),
