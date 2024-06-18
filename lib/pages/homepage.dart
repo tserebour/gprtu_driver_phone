@@ -135,6 +135,7 @@ class _HomePageState extends State<HomePage> {
                                 ),
                               ),
                             ),
+                          
                           ),
                           Expanded(
                             child: Card(
@@ -189,6 +190,107 @@ class _HomePageState extends State<HomePage> {
                                         )
                                     ),
                           
+                                    Text(
+                                        "40Km",
+                                        style: TextStyle(
+                                          fontSize: width * 0.05,
+                                        )
+                                    )
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      Row(
+                        children: [
+                          Expanded(
+                            child: Card(
+                              elevation: 2,
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Column(
+                                  children: [
+                                    CircleAvatar(
+                                      radius: width * 0.04,
+                                      backgroundColor: Colors.transparent,
+                                      child: Icon(Icons.location_on, color: Theme.of(context).primaryColor,),
+                                    ),
+
+                                    Text(
+                                        "current Location",
+                                        style: TextStyle(
+                                          fontSize: width * 0.03,
+                                          color: Colors.grey,
+                                        )
+                                    ),
+
+                                    Text(
+                                        "Ejisu",
+                                        style: TextStyle(
+                                          fontSize: width * 0.05,
+                                        )
+                                    )
+                                  ],
+                                ),
+                              ),
+                            ),
+
+                          ),
+                          Expanded(
+                            child: Card(
+                              elevation: 2,
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Column(
+                                  children: [
+                                    CircleAvatar(
+                                      radius: width * 0.04,
+                                      backgroundColor: Colors.transparent,
+                                      child: Icon(Icons.location_on, color: Theme.of(context).primaryColor,),
+                                    ),
+
+                                    Text(
+                                        "current Queue",
+                                        style: TextStyle(
+                                          fontSize: width * 0.03,
+                                          color: Colors.grey,
+                                        )
+                                    ),
+
+                                    Text(
+                                        "1st",
+                                        style: TextStyle(
+                                          fontSize: width * 0.05,
+                                        )
+                                    )
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                          Expanded(
+                            child: Card(
+                              elevation: 2,
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Column(
+                                  children: [
+                                    CircleAvatar(
+                                      radius: width * 0.04,
+                                      backgroundColor: Colors.transparent,
+                                      child: Icon(Icons.location_on, color: Theme.of(context).primaryColor,),
+                                    ),
+
+                                    Text(
+                                        "Distance",
+                                        style: TextStyle(
+                                          fontSize: width * 0.03,
+                                          color: Colors.grey,
+                                        )
+                                    ),
+
                                     Text(
                                         "40Km",
                                         style: TextStyle(
@@ -307,6 +409,8 @@ class _HomePageState extends State<HomePage> {
                     )
                   ],
                 ),
+              
+              
               ),
             ),
           )

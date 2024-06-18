@@ -2,9 +2,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:gprtu_driver_phone/custom_widgets/BottomNavBar.dart';
+import 'package:gprtu_driver_phone/pages/homepage.dart';
 
 import '../custom_widgets/DisplayMap.dart';
 import '../custom_widgets/SideBar.dart';
+import 'NotificationPage.dart';
 
 class MapPage extends StatefulWidget {
   const MapPage({super.key});
@@ -62,7 +64,9 @@ class _MapPageState extends State<MapPage> {
                 Icons.notifications,
                 color: Theme.of(context).primaryColor,
               ),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context)=> const NotificationPage()));
+              },
             ),
           ),
         ],
