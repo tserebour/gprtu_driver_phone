@@ -16,13 +16,19 @@ class _LoadingPageState extends State<LoadingPage> {
       body: FutureBuilder(
         future: load(),
         builder: (context, snapshot) {
-          return const Center(
+          return Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
 
-                Text(
+
+                Image.asset(
+                  'assets/images/gprtu_logo.png',
+                  fit: BoxFit.cover,
+                ),
+
+                const Text(
                   "GPRTU - driver",
                   style: TextStyle(
                     color: Colors.black,

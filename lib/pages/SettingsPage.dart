@@ -7,6 +7,7 @@ import 'package:gprtu_driver_phone/custom_widgets/custom_scaffold.dart';
 
 import '../custom_widgets/BottomNavBar.dart';
 import 'PaymentMethodPage.dart';
+import 'membership_subscription_page.dart';
 
 class SettingsPage extends StatefulWidget {
   const SettingsPage({super.key});
@@ -71,7 +72,16 @@ class _SettingsPageState extends State<SettingsPage> {
 
                         CustomProfilePageListTile(
                             title: 'Subscription',
-                            icon: Icon(Icons.subscriptions, color: Theme.of(context).primaryColor)
+                            icon: Icon(Icons.subscriptions, color: Theme.of(context).primaryColor),
+                            onTap: () {
+                              // Navigate to Subscription Page
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const MembershipSubscriptionPage(),
+                                ),
+                              );
+                            },
                         ),
 
                         CustomProfilePageListTile(

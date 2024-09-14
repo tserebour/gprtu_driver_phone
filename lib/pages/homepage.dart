@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:gprtu_driver_phone/pages/testing_page.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
 import '../custom_widgets/BottomNavBar.dart';
 import '../custom_widgets/SideBar.dart';
@@ -12,7 +14,53 @@ class HomePage extends StatefulWidget {
   State<HomePage> createState() => _HomePageState();
 }
 
+
+
 class _HomePageState extends State<HomePage> {
+
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+
+    listenForAlerts();
+
+
+  }
+
+  void listenForAlerts() {
+    Supabase.instance.client.channel("alerts").onPostgresChanges(
+      event: PostgresChangeEvent.all,
+      schema: 'public',
+      table: 'alerts',
+
+      callback: (payload) async {
+        print("hello");
+
+        // Show the alert to the user
+        final newAlert = payload.newRecord[''];
+
+        Navigator.push(context, MaterialPageRoute(builder: (context) => TestingPage(
+            driver: payload.newRecord['driver_name'],
+            latitude: payload.newRecord['location_latitude'],
+            longitude: payload.newRecord['location_longitude']
+        )));
+
+
+
+
+        //go to profile page
+
+
+
+
+
+
+
+      },
+    ).subscribe();
+  }
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
